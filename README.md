@@ -35,15 +35,16 @@ The nodes sign in with an API key of your Peal workspace:
 A key holds some of the permissions of the member who created it. Give it the
 ones your workflows use:
 
-| To                                             | The key needs                                |
-| ---------------------------------------------- | -------------------------------------------- |
-| Pick channels in the node                      | `channel:read`                               |
-| Create posts and drafts                        | `post:create`                                |
-| Publish, schedule, reschedule or cancel posts  | `post:schedule`                              |
-| Get and list posts, and wait for their outcome | `post:read`                                  |
-| Read a post's analytics                        | `analytics:read`                             |
-| Upload, import, get and delete media           | `media:upload`, `media:read`, `media:delete` |
-| Use the trigger                                | `webhook:manage`, `webhook:read`             |
+| To                                                                     | The key needs                    |
+| ---------------------------------------------------------------------- | -------------------------------- |
+| Pick or list channels                                                  | `channel:read`                   |
+| Save drafts                                                            | `post:create`, `channel:read`    |
+| Publish, schedule or queue a post, reschedule, unschedule or cancel it | `post:schedule`, `channel:read`  |
+| Get and list posts, and wait for their outcome                         | `post:read`                      |
+| Read a post's analytics                                                | `analytics:read`                 |
+| Upload or import media, and show it in posts                           | `media:upload`, `media:read`     |
+| Delete media                                                           | `media:delete`                   |
+| Use the trigger                                                        | `webhook:manage`, `webhook:read` |
 
 n8n checks the credential by asking Peal who the key is (`GET /api/v1/credential`).
 
