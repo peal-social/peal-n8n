@@ -4,6 +4,16 @@ updates:
     directory: /
     schedule:
       interval: weekly
+    ignore:
+      # n8n's lint runs typescript-eslint, which takes TypeScript below 6.1.
+      - dependency-name: typescript
+        versions: [">=6.1.0"]
+      # n8n 3.0's release candidates (npm's `rc` tag): `latest` is still 0.x
+      # for the CLI and 2.x for n8n-workflow.
+      - dependency-name: "@n8n/node-cli"
+        versions: [">=1.0.0"]
+      - dependency-name: n8n-workflow
+        versions: [">=3.0.0"]
     groups:
       n8n:
         patterns: ["@n8n/*", "n8n-workflow"]
