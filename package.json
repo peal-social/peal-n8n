@@ -44,7 +44,7 @@
     "@n8n/node-cli": "0.58.6",
     "@types/express": "5.0.6",
     "@types/node": "26.6.10",
-    "eslint": "9.39.5",
+    "eslint": "10.15.0",
     "n8n-workflow": "2.49.4",
     "oxfmt": "0.80.0",
     "oxlint": "1.95.0",
