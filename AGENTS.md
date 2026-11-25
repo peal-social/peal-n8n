@@ -43,6 +43,9 @@ Keep every one:
   `tsc` emit ES modules, and n8n loads nodes with `require()`.
 - Tests run under Vitest, from `test/` (its own `tsconfig.json`), on plain
   functions: the request bodies, time zones, signatures, parsers and pages.
+- Dependabot proposes the highest version, not npm's `latest`: its ignore
+  rules keep TypeScript below 6.1 and n8n's packages off their release
+  candidates. Lift each rule when its reason goes.
 - Pin every dependency to its exact latest release and commit
   `pnpm-lock.yaml`. pnpm's supply-chain policy (`pnpm-workspace.yaml`) denies
   the install scripts no build needs.
