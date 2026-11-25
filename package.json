@@ -29,6 +29,10 @@
     "README.md",
     "CHANGELOG.md"
   ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "scripts": {
     "build": "n8n-node build",
     "check": "oxfmt --check && oxlint && n8n-node lint",
