@@ -5,7 +5,10 @@
 #
 # npm trusts this workflow through Trusted Publishing (package settings on
 # npmjs.com: repository peal-social/peal-n8n, workflow publish.yml), so no
-# token is stored here.
+# token is stored here. npm sets that up only for a package that exists: the
+# very first publish takes a short-lived token in the NPM_TOKEN secret, which
+# is deleted once Trusted Publishing is on. npm prefers the workflow's OIDC
+# token when both are there.
 
 name: Publish
 
@@ -44,3 +47,5 @@ jobs:
       # In GitHub Actions, n8n's release lints, builds and runs npm publish
       # with provenance.
       - run: pnpm run release
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
