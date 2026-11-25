@@ -1,0 +1,75 @@
+{
+  "name": "n8n-nodes-peal",
+  "version": "0.1.0",
+  "description": "Schedule and publish social media posts with Peal, and start workflows from Peal's webhooks.",
+  "keywords": [
+    "n8n",
+    "n8n-community-node-package",
+    "peal",
+    "scheduling",
+    "social media"
+  ],
+  "homepage": "https://github.com/peal-social/peal-n8n#readme",
+  "bugs": {
+    "url": "https://github.com/peal-social/peal-n8n/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Peal",
+    "email": "hello@peal.social",
+    "url": "https://peal.social"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peal-social/peal-n8n.git"
+  },
+  "files": [
+    "dist",
+    "LICENSE.md",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "n8n-node build",
+    "check": "oxfmt --check && oxlint && n8n-node lint",
+    "dev": "n8n-node dev",
+    "fix": "oxfmt && oxlint --fix",
+    "lint": "pnpm run check",
+    "prepublishOnly": "n8n-node prerelease",
+    "release": "n8n-node release",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p test"
+  },
+  "devDependencies": {
+    "@n8n/node-cli": "0.58.6",
+    "@types/express": "5.0.6",
+    "@types/node": "26.6.10",
+    "eslint": "9.39.5",
+    "n8n-workflow": "2.49.4",
+    "oxfmt": "0.80.0",
+    "oxlint": "1.95.0",
+    "oxlint-tsgolint": "7.0.2008",
+    "release-it": "21.1.3",
+    "typescript": "6.0.3",
+    "ultracite": "8.3.1",
+    "vitest": "5.1.2"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  },
+  "engines": {
+    "node": ">=22.22.2"
+  },
+  "packageManager": "pnpm@12.23.0",
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "strict": true,
+    "credentials": [
+      "dist/credentials/PealApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Peal/Peal.node.js",
+      "dist/nodes/PealTrigger/PealTrigger.node.js"
+    ]
+  }
+}

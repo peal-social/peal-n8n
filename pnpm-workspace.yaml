@@ -1,0 +1,23 @@
+allowBuilds:
+  cpu-features: false
+  eslint-plugin-n8n-nodes-base: false
+  isolated-vm: false
+  ssh2: false
+minimumReleaseAgeExclude:
+  - "@n8n/ai-node-sdk@0.39.6"
+  - "@n8n/ai-utilities@0.42.6"
+  - "@n8n/api-types@1.49.5"
+  - "@n8n/backend-common@1.49.6"
+  - "@n8n/backend-network@1.23.6"
+  - "@n8n/decorators@1.49.5"
+  - "@n8n/expression-runtime@0.40.4"
+  - "@n8n/inbound-auth@0.8.4"
+  - "@n8n/node-cli@0.58.6"
+  - "@types/node@26.6.10"
+  - "@vitest/mocker@5.1.2"
+  - "@vitest/spy@5.1.2"
+  - n8n-workflow@2.49.4
+  - vitest@5.1.2
+permissions:
+  ultracite:
+    skills: false

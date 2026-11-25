@@ -1,0 +1,46 @@
+# Publishes the package to npm when a version tag is pushed, with a provenance
+# statement: n8n verifies community nodes only when GitHub Actions published
+# them. `pnpm run release` on a machine bumps the version, writes the
+# changelog, tags and pushes, which starts this workflow.
+#
+# npm trusts this workflow through Trusted Publishing (package settings on
+# npmjs.com: repository peal-social/peal-n8n, workflow publish.yml), so no
+# token is stored here.
+
+name: Publish
+
+on:
+  push:
+    tags: ["*.*.*"]
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      # For npm's provenance statement and Trusted Publishing.
+      id-token: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6.1.1
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 26.13.1
+          registry-url: https://registry.npmjs.org/
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm run typecheck
+
+      - run: pnpm run test
+
+      # In GitHub Actions, n8n's release lints, builds and runs npm publish
+      # with provenance.
+      - run: pnpm run release
