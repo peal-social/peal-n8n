@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.0
+
+- Published as `@peal-social/n8n-nodes-peal`, under Peal's npm organisation.
+  `n8n-nodes-peal` 0.1.0 is deprecated: install the new name instead.
+
 ## 0.1.0
 
 The first release.

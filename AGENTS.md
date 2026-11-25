@@ -1,6 +1,6 @@
 # peal-n8n
 
-`n8n-nodes-peal`: Peal's community nodes for n8n. **Peal** (declarative, usable
+`@peal-social/n8n-nodes-peal`: Peal's community nodes for n8n, published under the `@peal-social` npm organisation (the unscoped `n8n-nodes-peal` 0.1.0 is deprecated in its favour). **Peal** (declarative, usable
 as an AI agent's tool) creates and manages posts, media and channels through
 Peal's API; **Peal Trigger** (programmatic) creates a webhook endpoint in the
 workspace and starts workflows on its events. Peal's API lives in the
@@ -75,7 +75,7 @@ and run a workflow against a Peal server you own (a local one, never a
 customer's workspace):
 
 1. `pnpm run build && pnpm pack`, and unpack the tarball into
-   `<n8n home>/.n8n/nodes/node_modules/n8n-nodes-peal`.
+   `<n8n home>/.n8n/nodes/node_modules/@peal-social/n8n-nodes-peal`.
 2. Start `n8nio/n8n` with that home mounted and `--network host`, so it reaches
    the Peal server and the store's signed upload addresses.
 3. `n8n import:credentials` and `n8n import:workflow`, then

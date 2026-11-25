@@ -1,4 +1,4 @@
-# n8n-nodes-peal
+# @peal-social/n8n-nodes-peal
 
 This package adds [Peal](https://peal.social) to [n8n](https://n8n.io). Your
 workflows can publish, schedule and queue social media posts on every channel
@@ -18,7 +18,7 @@ It has two nodes:
 ## Installation
 
 In n8n, open **Settings**, then **Community nodes**, choose **Install**, and
-enter `n8n-nodes-peal`. n8n's guide to
+enter `@peal-social/n8n-nodes-peal`. n8n's guide to
 [installing community nodes](https://docs.n8n.io/integrations/community-nodes/installation/)
 covers self-hosted instances and the command line.
 
