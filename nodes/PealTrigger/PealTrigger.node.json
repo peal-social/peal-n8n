@@ -1,5 +1,5 @@
 {
-  "node": "n8n-nodes-peal.pealTrigger",
+  "node": "@peal-social/n8n-nodes-peal.pealTrigger",
   "nodeVersion": "1.0",
   "codexVersion": "1.0",
   "categories": ["Marketing & Content"],
