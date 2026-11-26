@@ -122,8 +122,9 @@ const statusOf = (value: unknown): ChannelStatus => {
   return tag === "disabled" || tag === "refreshNeeded" ? tag : "active";
 };
 
+/** Peal lists a workspace's channels as a plain array, never in pages. */
 export const readChannels = (value: unknown): Channel[] =>
-  readPage(value).items.flatMap((item) => {
+  (Array.isArray(value) ? value.filter(isJsonObject) : []).flatMap((item) => {
     const id = textIn(item, "id");
 
     if (id === undefined) {

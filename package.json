@@ -1,6 +1,6 @@
 {
   "name": "@peal-social/n8n-nodes-peal",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Schedule and publish social media posts with Peal, and start workflows from Peal's webhooks.",
   "keywords": [
     "n8n",
