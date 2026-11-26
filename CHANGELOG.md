@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.1
+
+- **Channel → Get Many** returns one item per channel, and the channel pickers
+  list the workspace's channels. Peal lists channels as a plain array, which
+  0.2.0 read as a page: it returned one empty item and empty pickers.
+- A handle that already starts with `@` shows once in the pickers'
+  descriptions.
+
 ## 0.2.0
 
 - Published as `@peal-social/n8n-nodes-peal`, under Peal's npm organisation.

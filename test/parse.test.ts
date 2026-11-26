@@ -82,28 +82,25 @@ describe(readPreparedUpload, () => {
 
 describe("readChannels and channelOptions", () => {
   it("lists channels by name, with platform, handle and status", () => {
-    const page = {
-      items: [
-        {
-          displayName: "Peal",
-          handle: "peal.social",
-          id: "c-2",
-          platform: "bluesky",
-          status: { _tag: "active" },
-        },
-        {
-          handle: "pealsocial",
-          id: "c-1",
-          label: "Brand",
-          platform: "googleBusiness",
-          status: { _tag: "refreshNeeded" },
-        },
-        { handle: "no-id" },
-      ],
-      nextCursor: null,
-    };
+    const channels = [
+      {
+        displayName: "Peal",
+        handle: "@peal.social",
+        id: "c-2",
+        platform: "bluesky",
+        status: { _tag: "active" },
+      },
+      {
+        handle: "pealsocial",
+        id: "c-1",
+        label: "Brand",
+        platform: "googleBusiness",
+        status: { _tag: "refreshNeeded" },
+      },
+      { handle: "no-id" },
+    ];
 
-    expect(channelOptions(readChannels(page))).toStrictEqual([
+    expect(channelOptions(readChannels(channels))).toStrictEqual([
       {
         description:
           "Google Business Profile, @pealsocial. Needs reconnecting.",

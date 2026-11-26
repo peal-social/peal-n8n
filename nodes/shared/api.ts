@@ -103,8 +103,13 @@ export const channelOptions = (
     .map((channel) => {
       const platform = platformName(channel.platform);
 
+      // Some platforms' handles already start with "@".
+      const handle = channel.handle.startsWith("@")
+        ? channel.handle
+        : `@${channel.handle}`;
+
       return {
-        description: `${platform}, @${channel.handle}. ${statusNames[channel.status]}.`,
+        description: `${platform}, ${handle}. ${statusNames[channel.status]}.`,
         name: `${channel.name} (${platform})`,
         value: channel.id,
       };

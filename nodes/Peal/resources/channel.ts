@@ -11,14 +11,7 @@ export const channelOperations: INodeProperties = {
       action: "Get many channels",
       description: "List the channels connected to the workspace",
       name: "Get Many",
-      routing: {
-        output: {
-          postReceive: [
-            { properties: { property: "items" }, type: "rootProperty" },
-          ],
-        },
-        request: { method: "GET", url: "/channels" },
-      },
+      routing: { request: { method: "GET", url: "/channels" } },
       value: "getAll",
     },
   ],
